@@ -1,0 +1,24 @@
+<%= render partial: 'choice' %>
+
+
+<div class="bg-gradient-to-b from-blue-100 to-blue-400 p-4 flex flex-col items-center">
+    <% qualifications = @entries.qualifications%>
+  <% unless qualifications.empty?%>
+    <div class="bg-green-200 p-4 rounded-lg shadow-md mb-4">
+      <p class="font-semibold"><%= qualifications.first['rider_name'] %> and <%= qualifications.first['horse_name'] %> is qualified for msvB</p>
+    </div>
+  <% end %>
+
+  <h1 class="text-2xl font-bold mb-4">List of Items:</h1>
+  <ul class="space-y-4 w-full max-w-md">
+    <% @entries.items.each do |entry| %>
+    <%= render partial: 'item', locals: {
+      rider_name: entry ['rider_name'],
+      horse_name: entry ['horse_name'],
+      result_preview: entry ['result_preview'],
+      meeting_class_name: entry ['meeting_class_name'],
+      meeting_class_start_at: entry ['meeting_class_start_at']}%>
+     
+    <% end %>
+  </ul>
+</div>

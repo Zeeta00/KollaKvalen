@@ -1,0 +1,11 @@
+  <% qualification_item = @items.find { |item| item['meeting_class_name'].include?('Medelsvår B:1') && item['result_preview'].to_f > 64 } %>
+  
+  <% if qualification_item.present? %>
+    <div class="bg-green-200 p-4 rounded-lg shadow-md mb-4">
+      <p class="font-semibold"><%= qualification_item['rider_name'] %> and <%= qualification_item['horse_name'] %> is qualified for msvB</p>
+    </div>
+  <% else %>
+    <div class="bg-red-200 p-4 rounded-lg shadow-md mb-4">
+      <p class="font-semibold"><%= qualification_item['rider_name'] %> and <%= qualification_item['horse_name'] %> is not qualified</p>
+    </div>
+  <% end %>

@@ -1,0 +1,9 @@
+
+<h1>Data Filtered by Rider Name</h1>
+<%= form_tag('/selectedRider', method: 'get') do %>
+  <div class="form-group">
+    <%= label_tag 'rider_name', 'Select Rider Name:' %>
+    <%= select_tag 'rider_name', options_for_select(@entries.riders), prompt: 'Select a Rider' %>
+  </div>
+  <%= submit_tag 'Filter' %>
+<% end %>

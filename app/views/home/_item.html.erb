@@ -1,0 +1,7 @@
+<li class="bg-white border border-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+  <p class="font-semibold text-lg text-blue-600">Rider Name: <%= rider_name %></p>
+  <p class="text-gray-600">Horse Name: <%= horse_name %></p>
+  <p class="text-blue-500">Result Preview: <%= result_preview %></p>
+  <p class="text-gray-600">Class Name: <%= meeting_class_name %></p>
+  <p class="text-gray-600">Date: <%= Time.parse(meeting_class_start_at).strftime('%Y-%m-%d %H:%M:%S') %></p>
+</li>
